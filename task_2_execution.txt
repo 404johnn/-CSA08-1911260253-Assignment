@@ -1,0 +1,5 @@
+$ python attendance_month.py
+Return code: 0
+Students processed: 2
+Damaged records: 0
+Reports written to reports/

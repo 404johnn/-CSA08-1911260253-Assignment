@@ -1,0 +1,24 @@
+$ /opt/pyvenv/bin/python -c from task4 import process; from pathlib import Path; import tempfile; d=Path('.'); log='demo_returns.log'; err='demo_errors.log'; Path(log).unlink(missing_ok=True); [process(f'day{i}.txt',log,err) for i in range(1,4)]; print(Path(log).read_text()); print('Missing day handled:', process('missing_day.txt',log,err)); print('Error log:',Path(err).read_text())
+Return code: 0
+192311001,2026-10-01,P
+192311002,2026-10-01,A
+192311001,2026-10-02,P
+192311002,2026-10-02,L
+192311001,2026-10-03,A
+192311002,2026-10-03,P
+
+Missing day handled: False
+Error log: missing_day.txt: FileNotFoundError: [Errno 2] No such file or directory: 'missing_day.txt'
+
+
+[stderr]
+Spreadsheet runtime warmup failed during python startup
+Traceback (most recent call last):
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py", line 26, in warm_spreadsheet_runtime_on_startup
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 785, in warm_spreadsheet_runtime
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 718, in _warm_feature_flows
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 509, in _warm_drawing_and_image_flows
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/generated/interface/models.py", line 32861, in bring_to_front
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/rpc/remote.py", line 764, in __call__
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/rpc/client.py", line 175, in call
+artifact_tool.rpc.client.RemoteError: Element ordering requires an owning element collection.

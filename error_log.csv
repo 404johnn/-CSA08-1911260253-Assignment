@@ -1,0 +1,5 @@
+file_name,line_number,reason
+ece.txt,1,duplicate register number 192311001
+ece.txt,2,invalid email 'meena@invalid'
+civil.txt,2,"expected 5 comma-separated fields, found 2"
+it.txt,0,FileNotFoundError: [Errno 2] No such file or directory: 'department_files/it.txt'
